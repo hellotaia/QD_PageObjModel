@@ -1,11 +1,5 @@
 ﻿using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SeleniumExtras.PageObjects;
 
 namespace QD_PageObjModel
@@ -27,12 +21,13 @@ namespace QD_PageObjModel
         }
 
         [Test]
-        public void SomeTest()
+        public void SomeExampleTest()
         {
-          
+            string actualText = pageFactoryPage.LoginLostPswrd.Text;
+            string expectedTest = "Lost your password?";
+            Assert.AreEqual(actualText, expectedTest);
         }
-
-        [TearDown]
+            [TearDown]
         public void TearDown()
         {
             driver.Quit();
